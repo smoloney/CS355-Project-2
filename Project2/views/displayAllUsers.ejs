@@ -1,0 +1,80 @@
+<%include partials/headers.ejs%>
+<div id = "menu">
+    <ul>
+        <li> <a href="characters/all"> View All Characters </a> </li><br />
+        <li>  <a href = "characters/new"> Add New Charater</a> </li> <br />
+        <li>  <a href = "/users/all">Get All Users</a> </li><br />
+        <li> <a href = "/users/create">Create New User</a></li>
+    </ul>
+</div>
+<div>
+        <%if(rs.length > 0) { %>
+    <% for (var i = 0; i < rs.length; i++){ %>
+                <table border = "1">
+
+                    <tr> <th> <%=rs[i].username%></th></tr>
+
+                    <tr>
+                        <th>
+
+                                Name:
+
+                        </th>
+                            <tc><td> <%=rs[i].firstname%> <%=rs[i].lastname%> </td></tc>
+
+                    <tc>
+                        <tr>
+                            <th>
+                                Email:
+                            </th>
+                    </tc>
+                    <tc> <td><%=rs[i].email %></td></tc>
+                    </tr>
+                        <tc>
+                            <tr>
+                                <th>
+                                Role:
+                                </th>
+                                <tc><td><%=rs[i].role %></td></tc>
+                            </tr>
+                        </tc>
+
+
+                    </tr>
+                    </tr>
+                    <tc>
+                        <tr>
+                            <th>
+                                Favorite Character:
+                            </th>
+                            <tc><td><%=rs[i].cname %></td></tc>
+                        </tr>
+                    </tc>
+
+
+                    </tr>
+
+                    <tc>
+                        <tr>
+                            <td>
+                                <a href = "/users/delete/?user_id=<%=rs[i].user_id%>">Delete</a>
+                            </td>
+                            <tc><td>
+                                    <a href = "/users/edit/?user_id=<%rs[i].user_id%>">Edit</a>
+                                </td></tc>
+                        </tr>
+                    </tc>
+
+                    <% } %>
+
+                </table>
+        <br />
+        <br />
+    <% } %>
+
+    <a href = "/users/create">Create New User</a>
+
+
+
+
+</div>

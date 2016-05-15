@@ -1,0 +1,25 @@
+<% include partials/headers.ejs %>
+
+<div id = "menu">
+    <ul>
+        <li> <a href="characters/all"> View All Characters </a> </li><br />
+        <li>  <a href = "characters/new"> Add New Charater</a> </li> <br />
+        <li>  <a href = "/users/all">Get All Users</a> </li><br />
+        <li> <a href = "/users/create">Create New User</a></li>
+    </ul>
+</div>
+<form action="/users/save/">
+
+    <label for = "firstname"> First Name </label> <input type = "text" id = "firstname" name = "firstname"/> <br />
+    <label for = "lastname"> Last Name </label> <input type = "text" id = "lastname" name = "lastname"/> <br />
+    <label for = "email">Email</label> <input type = "text" id = "email" name = "email"/> <br />
+    <label for = "role"> Role</label><input type = "text" id = "role" name = "role"/> <br />
+    <label for = "username">Username </label> <input type = "text" id = "username" name = "username"/> <br />
+    <label for = "cname"> Favorite Character</label> <input type = "text" id = "cname" name = "cname" /> <br />
+
+    <label for = "password" >Password </label> <input type = "password" id = "password" name = "password"/> <br />
+    <br />
+    <input type = "submit" />
+</form>
+
+<%include partials/footer.ejs%>

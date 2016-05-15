@@ -1,0 +1,198 @@
+<% include partials/headers%>
+
+<div id = "menu">
+    <ul>
+        <li> <a href="characters/all"> View All Characters </a> </li><br />
+        <li>  <a href = "characters/new"> Add New Charater</a> </li> <br />
+        <li>  <a href = "/users/all">Get All Users</a> </li><br />
+        <li> <a href = "/users/create">Create New User</a></li>
+    </ul>
+</div>
+<div xmlns="http://www.w3.org/1999/html">
+
+
+
+<% if(rs.length > 0) { %>
+    <h1> <%=rs[0].cname %> </h1>
+    <table border = "1">
+
+
+        <% for(var i = 0; rs.length > i; i++) { %>
+
+        <table border="1">
+            <tr><th> Base Stats</th> </tr>
+            <tr>
+                <tc>
+
+                    <td>
+                        Health: <%=rs[i].health %>
+                    </td>
+
+                </tc>
+
+                <tc>
+
+                    <td>
+                        Health Regen: <%=rs[i].health_regen %>
+                    </td>
+
+                </tc>
+            </tr>
+            <tc>
+                <tr>
+
+                    <td>
+                        Mana: <%=rs[i].mana %>
+                    </td>
+
+            </tc>
+            <tc>
+
+                <td>
+                    Mana Regen: <%=rs[i].mana_regen %>
+                </td>
+                </tr>
+
+            </tc>
+            <tr>
+                <tc>
+
+
+                    <td>
+                        Auto Attack Range: <%=rs[i].aRange %>
+                    </td>
+
+                </tc>
+                <tc>
+
+                    <td>
+                        Damage: <%=rs[i].dmg %>
+                    </td>
+
+                </tc>
+            </tr>
+            <tr>
+                <tc>
+
+                    <td>
+                        Armor: <%=rs[i].armor %>
+
+                    </td>
+
+                </tc>
+                <tc>
+
+                    <td>
+                        Magic Resist: <%=rs[i].mr %>
+
+                    </td>
+
+                </tc>
+            </tr>
+            <tr>
+                <tc>
+
+                    <td>
+
+                        Attack Speed: <%=rs[i].aSpeed %>
+                    </td>
+
+                </tc>
+                <tc>
+
+                    <td>
+                        Movement Speed: <%=rs[i].movSpeed %>
+                    </td>
+
+                </tc>
+            </tr>
+        </table>
+        <br />
+        <br />
+
+        <table border="1">
+        <tr> <th> Primary Ability</th></tr>
+            <tr>
+
+                <tc>
+
+                    <td>
+                        Name: <%=rs[i].qMoveName %>
+                    </td>
+
+                </tc>
+                <tc>
+
+                    <td>
+                       Range: <%=rs[i].qRange %>
+                    </td>
+
+                </tc>
+                <tc>
+
+                    <td>
+                        Mana Cost: <%=rs[i].q_cost %>
+                    </td>
+
+                </tc>
+                <tc>
+
+                    <td>
+                       Cooldown: <%=rs[i].q_cd %>
+                    </td>
+                </tc>
+            </tr>
+        </table>
+    <br />
+    <br />
+
+
+
+            <br />
+            <br />
+
+
+            <table border="1">
+                <tr> <th> Ultimate Ability</th></tr>
+            <tc>
+
+                <td>
+                   Name: <%=rs[i].rMoveName %>
+                </td>
+
+            </tc>
+            <tc>
+
+                <td>
+                    Range: <%=rs[i].rRange %>
+                </td>
+
+            </tc>
+            <tc>
+
+                <td>
+                    Mana Cost: <%=rs[i].r_cost %>
+                </td>
+
+            </tc>
+            <tc>
+
+                <td>
+                    Cooldown: <%=rs[i].r_cd %>
+                </td>
+
+            </tc>
+            </tc>
+                </tr>
+
+        <% } %>
+
+    </table>
+
+    <% } %>
+
+
+
+</div>
+
+<%include partials/footer%>

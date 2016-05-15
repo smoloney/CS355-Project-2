@@ -1,0 +1,36 @@
+<% include partials/headers%>
+<div id = "menu">
+    <ul>
+        <li> <a href="characters/all"> View All Characters </a> </li><br />
+        <li>  <a href = "characters/new"> Add New Charater</a> </li> <br />
+        <li>  <a href = "/users/all">Get All Users</a> </li><br />
+        <li> <a href = "/users/create">Create New User</a></li>
+    </ul>
+</div>
+<div>
+    <% if(rs.length > 0) { %>
+    <table border = "1">
+        <tr><th> Character Names</th></tr>
+    <% for(var i = 0; rs.length > i; i++) { %>
+        <tr>
+                <tc>
+                        <td> <a href="/characters/?char_id=<%=rs[i].char_id%>"><%=rs[i].cname %>
+                            </a>
+                        </td>
+                        <td>
+                            <a href = "/characters/?char_id = <%rs[i].char_id%>"><%=rs[i].role %></a>
+                        </td>
+                </tc>
+                <td>
+                    <a href = "/characters/delete/?char_id=<%= rs[i].char_id %>"> Delete </a>
+                    <a href="/characters/edit/?char+id=<%= rs[i].char_id %>"> Edit </a>
+                </td>
+        </tr>
+
+        <% } %>
+
+    </table>
+<% } %>
+</div>
+
+<% include partials/footer %>

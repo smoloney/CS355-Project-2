@@ -1,0 +1,51 @@
+<% include partials/headers.ejs %>
+<div id = "menu">
+    <ul>>
+        <li> <a href="characters/all"> View All Characters </a> </li><br />
+        <li>  <a href = "characters/new"> Add New Charater</a> </li> <br />
+        <li>  <a href = "/users/all">Get All Users</a> </li><br />
+        <li> <a href = "/users/create">Create New User</a></li>
+    </ul>
+</div>
+<% if (typeof message !== 'undefined') { %>
+<div> <= message %> </div>
+
+<% } %>
+
+
+<% if(rs.length > 0) { %>
+<h1> Edit User </h1>
+<form method = "POST" action = "/users/user_update">
+    <input type = "hidden" name = "user_id" value = "<% rs[0].user_id %>" />
+    First Name: <input type="text" id = "firstname" name = "firstname" value ="<%= rs[0].firstname %>" />
+    <br />
+    <br />
+
+    Last Name: <input type="text" id = "lastname" name = "lastname" value = "<%=rs[0].lastname %>" />
+    <br />
+    <br />
+
+    Username: <input type = "text" id = "username" name = "username" value = "<%rs[0].username %>"/>
+    <br />
+    <br />
+
+    E-Mail: <input type="email" id = "email" name ="email" value = "<%rs[0].email %>" />
+    <br />
+    <br />
+
+    Role: <input type ="text" id = "role" name = "role" value = "<% rs[0].role%>" />
+    <br />
+    <br />
+    Password: <input type = "password" id = "password" name = "password" value = "<%rs[0].password %>" />
+    <br />
+    <br>
+    <% } %>
+
+    <button id = "editButton">Edit </button>
+
+
+
+
+</form>
+
+<% include partials/footer %>
