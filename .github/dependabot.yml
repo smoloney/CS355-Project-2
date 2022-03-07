@@ -1,0 +1,7 @@
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: 'Project2/'
+    schedule:
+      interval: 'daily'
+      time: "17:00"
